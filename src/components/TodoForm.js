@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-export const TodoForm = () => {
+export const TodoForm = ({addTodo}) => {
   const [input, setInput] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(input);
-    setInput('');
+    addTodo(input);
   }
   return (
     <form className ="TodoForm" onSubmit={handleSubmit}>
